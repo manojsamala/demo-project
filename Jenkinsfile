@@ -1,8 +1,9 @@
 pipeline{
   agent any
   stages {
-    stages("Git cloning"){
+    stage("Git cloning"){
       script{
+        git branch: 'main', url: 'https://github.com/manojsamala/demo-project.git'
       }
     }
   }

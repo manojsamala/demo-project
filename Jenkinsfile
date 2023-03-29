@@ -32,12 +32,12 @@ pipeline{
     stage("Code quality test"){
       steps{
         script{
-          withSonarQubeEnv(credentialsId: 'jenkins access-sonar') {
+          withSonarQubeEnv(credentialsId: 'jenkins new') {
             sh "mvn clean package sonar:soanr"
           }
          }
         }
       }
-    }
-  }
-}
+    
+  
+

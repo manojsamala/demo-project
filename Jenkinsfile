@@ -37,6 +37,7 @@ pipeline{
             }
           }
         }
+      }
         stage("upload to nexus"){
          steps{
           script{
@@ -45,7 +46,7 @@ pipeline{
                 [
                   artifactId: 'springboot', 
                   classifier: '', 
-                  file: 'target/Uber', 
+                  file: 'target/Uber.jar', 
                   type: 'jar'
                 ]
               ], 

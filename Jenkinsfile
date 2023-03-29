@@ -36,10 +36,32 @@ pipeline{
             sh "mvn clean package sonar:sonar"
             }
           }
-         }
         }
-      }
-    }
+        stage("upload to nexus"){
+         steps{
+          script{
+            nexusArtifactUploader artifacts: 
+              [
+                [
+                  artifactId: 'springboot', 
+                  classifier: '', 
+                  file: 'target/Uber.jar', 
+                  type: 'jar'
+                ]
+              ], 
+                credentialsId: 'nexus-cred', 
+                groupId: 'com.example', 
+                nexusUrl: '15.206.2.12:8081', 
+                nexusVersion: 'nexus3', 
+                protocol: 'http', 
+                repository: 'evening_batch', 
+                version: '1.0.0' 
+           }
+         }
+       }
+     
+   }
+ }
     
   
 

@@ -34,10 +34,12 @@ pipeline{
         script{
           withSonarQubeEnv(credentialsId: 'jenkins new') {
             sh "mvn clean package sonar:soanr"
+            }
           }
          }
         }
       }
+    }
     
   
 

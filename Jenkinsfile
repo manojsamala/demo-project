@@ -33,7 +33,7 @@ pipeline{
       steps{
         script{
           withSonarQubeEnv(credentialsId: 'jenkins new') {
-            sh "mvn clean package sonar:soanr"
+            sh "mvn clean package sonar:sonar"
             }
           }
          }

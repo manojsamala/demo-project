@@ -46,16 +46,16 @@ pipeline{
                  [
                    artifactId: 'springboot', 
                    classifier: '', 
-                   file: 'target/Uber', 
+                   file: 'target/Uber.jar', 
                    type: 'jar'
                  ]
                ], 
-               credentialsId: 'nexus-cred', 
+               credentialsId: 'access-token', 
                groupId: 'com.example', 
                nexusUrl: '13.235.55.44:8081', 
                nexusVersion: 'nexus3', 
                protocol: 'http', 
-               repository: 'New_project', 
+               repository: 'manoj_new', 
                version: '1.0.0'
                }
               }
